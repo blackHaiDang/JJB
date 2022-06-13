@@ -8,4 +8,7 @@ FROM tomcat
 COPY --from=build /home/dang/JJB/target/fpt-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 EXPOSE 8081
 CMD ["catalina.sh", "run"]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8934656de5af96a05ddb3bbe65e66972d612e3f6
