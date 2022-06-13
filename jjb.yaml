@@ -6,18 +6,33 @@
           branches:
             - main
 - job:
-    name: JJBjob
+    name: JJBBuild
     scm: 
       - JJB-Jenkins
     project-type: freestyle
-    display-name: 'JJB'
     builders:
       - shell: |
-          TIME=`date`
-          echo "It is ${TIME}"
           sudo bash /home/dang/JJB/dkb.sh
+
     wrappers:
       - workspace-cleanup
-    
-    
+      
+- job:
+    name: JJBRun
+    project-type: freestyle
+    builders:
+      - shell: |
+          sudo bash /home/dang/JJB/dkr.sh
 
+- job:
+    name: Pipeline
+    project-type: pipeline
+    sandbox: true
+    pipeline-scm:
+      scm:
+        - JJB-Jenkins
+      script-path: script.groovy
+      lightweight-checkout: true
+    triggers:
+      - pollscm:
+          cron: "* * * * *"
