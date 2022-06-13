@@ -6,12 +6,12 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.0</version>
-		<packaging>war</packaging>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.haidang</groupId>
 	<artifactId>fpt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Exam</name>
 	<description>FPT exam</description>
 	<properties>
