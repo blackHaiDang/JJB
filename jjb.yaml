@@ -1,0 +1,23 @@
+- scm:
+    name: JJB-Jenkins
+    scm:
+      - git:
+          url: https://github.com/blackHaiDang/JJB
+          branches:
+            - main
+- job:
+    name: JJBjob
+    scm: 
+      - JJB-Jenkins
+    project-type: freestyle
+    display-name: 'JJB'
+    builders:
+      - shell: |
+          TIME=`date`
+          echo "It is ${TIME}"
+          sudo bash /home/dang/JJB/dkb.sh
+    wrappers:
+      - workspace-cleanup
+    
+    
+
