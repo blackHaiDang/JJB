@@ -31,7 +31,7 @@
     pipeline-scm:
       scm:
         - JJB-Jenkins
-      script-path: script.groovy
+      script-path: script
       lightweight-checkout: true
     triggers:
       - pollscm:
