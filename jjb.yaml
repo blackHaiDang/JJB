@@ -2,7 +2,7 @@
     name: JJB-Jenkins
     scm:
       - git:
-          url: https://github.com/blackHaiDang/JJB
+          url: https://github.com/blackHaiDang/JJB.git
           branches:
             - main
 - job:
@@ -25,13 +25,13 @@
           sudo bash /home/dang/JJB/dkr.sh
 
 - job:
-    name: Pipeline
+    name: abc
     project-type: pipeline
     sandbox: true
     pipeline-scm:
       scm:
         - JJB-Jenkins
-      script-path: script
+      script-path: script.groovy
       lightweight-checkout: true
     triggers:
       - pollscm:
